@@ -15,5 +15,11 @@
       <h1><%="#{@player1} vs #{@player2} - FIGHT!"%></h1>
     <h2>To the death!</h2>
       </center>
+      <p>
+        <%=@player2%>: 60HP
+        <form action="/attack">
+         <button type="submit">attack</button>
+      </form>
+        </p>
   </body>
 </html>

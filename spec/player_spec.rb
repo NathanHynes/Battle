@@ -2,12 +2,32 @@ require 'player'
 
 describe Player do
 
-  let(:player_1) { Player.new(name) }
-  let(:name) { double :player_1 }
+  let(:player_1) { Player.new(name1) }
+  let(:name1) { double :player_1 }
+  let(:name2) { double :player_2 }
+  let(:player_2) { Player.new(name2) }
 
    describe "#name" do
      it "returns players name" do
-       expect(player_1.name).to eq name
+       expect(player_1.name).to eq name1
      end
+  end
+
+  describe '#hit points' do
+    it "displays health" do
+      expect(player_1.HP).to eq 60
+    end
+  end
+  describe '# receive damage' do
+    it "reduces HP by 10" do
+      expect { player_1.receive_damage }.to change { player_1.HP }.by(-10)
+    end
+  end
+
+  describe '#attack' do
+    it 'damages the player' do
+      expect(player_2).to receive(:receive_damage)
+      player_1.attack(player_2)
+    end
   end
 end

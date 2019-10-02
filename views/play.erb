@@ -8,6 +8,18 @@
         font-family: 'Permanent Marker', cursive;
         color: #8a0303;
       }
+
+      .player1 {
+        text-align: left;
+        position: absolute;
+      }
+      .player2 {
+        text-align: right;
+      }
+
+      .attack {
+        text-align: center
+      }
     </style>
   </head>
   <body>
@@ -16,9 +28,14 @@
     <h2>To the death!</h2>
       </center>
       <p>
-       <%=@game.player2.name%>: <%=@game.player2.hp%>HP
-       <form action="/attack">
-        <button type="submit">attack</button>
+       <div class="player1">
+         <%=@game.player2.name%>: <%=@game.player2.hp%>HP
+         </div>
+      <div class="player2">
+        <%=@game.player1.name%>: <%=@game.player1.hp%>HP
+        </div>
+       <form class= "attack" action="/attack">
+        <button  type="submit">attack</button>
      </form>
        </p>
   </body>

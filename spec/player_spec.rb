@@ -15,12 +15,12 @@ describe Player do
 
   describe '#hit points' do
     it "displays health" do
-      expect(player_1.HP).to eq 60
+      expect(player_1.hp).to eq Player::DEFAULT_HP
     end
   end
   describe '# receive damage' do
     it "reduces HP by 10" do
-      expect { player_1.receive_damage }.to change { player_1.HP }.by(-10)
+      expect { player_1.receive_damage }.to change { player_1.hp }.by(-10)
     end
   end
 

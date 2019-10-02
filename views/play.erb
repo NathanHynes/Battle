@@ -12,11 +12,11 @@
   </head>
   <body>
     <center>
-      <h1><%="#{@player1.name} vs #{@player2.name} - FIGHT!"%></h1>
+      <h1><%="#{@game.player1.name} vs #{@game.player2.name} - FIGHT!"%></h1>
     <h2>To the death!</h2>
       </center>
       <p>
-       <%=@player2.name%>: <%=@player2.hp%>HP
+       <%=@game.player2.name%>: <%=@game.player2.hp%>HP
        <form action="/attack">
         <button type="submit">attack</button>
      </form>

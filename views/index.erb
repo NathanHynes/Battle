@@ -5,17 +5,80 @@
     <title>Homepage</title>
     <style>
       @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
-      form {
-
+      .main {
+        background-image: url("images/select.jpg");
+        background-position: center;
+        background-repeat: round;
+        background-size: cover;
+        background-attachment: fixed;
+        height: 632px;
+        overflow: hidden;
       }
+      header{
+        height: 120px;
+      }
+      .head {
+        height: 150px;
+        position: relative;
+        left: 32%;
+      }
+
+      h1{
+        text-align: center;
+        position: relative;
+        top: 350px;
+        color: white;
+      }
+
+      form {
+        position: absolute;
+        top: 600px;
+        padding-left: 100px;
+      }
+
+      #player1 {
+        float: left;
+        position: absolute;
+        top: 37px;
+        left: 362px;
+        height: 34px;
+        width: 263px;
+        background-color: #F09EA2;
+        border: 2px black solid;
+      }
+
+      #player2 {
+        float: right;
+        position: absolute;
+        top: 37px;
+        height: 34px;
+        width: 263px;
+        left: 1048px;
+        background-color: #9FBFFD;
+        border: 2px black solid;
+      }
+
+      .button {
+        position: absolute;
+        left: 650px;
+        width: 100px;
+        bottom: 40px;
+      }
+
     </style>
   </head>
+
   <body>
-    <h1>Players enter your names:</h1>
-    <form action="/names" method="post">
-      player 1: <input type = "text" name="player1"><br>
-      player 2: <input type="text" name="player2"><br>
-      <input type="submit"value="Submit">
-      </form>
+    <header>
+      <img class = "head" src="images/title.png" alt="">
+    </header>
+    <div class="main">
+      <h1>Players enter your names:</h1>
+      <form action="/names" method="post">
+        <input id="player1" type = "text" name="player1"><br>
+        <input id ="player2" type="text" name="player2"><br>
+        <input class = "button" type="submit"value="FIGHT">
+        </form>
+    </div>
   </body>
 </html>

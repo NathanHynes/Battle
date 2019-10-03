@@ -1,27 +1,29 @@
+# frozen_string_literal: true
+
 require_relative 'player'
 
 class Game
+  attr_reader :player1, :player2
 
   def initialize(player1, player2)
     @players = [player1, player2]
-    @counter = 0
-  end
-
-  def player1
-    @players[0]
-  end
-
-  def player2
-    @players[1]
+    @player1 = player1
+    @player2 = player2
   end
 
   def attack(player)
     player.receive_damage
   end
 
-  def turn
-    @counter += 1
-    @counter.odd? ? player1 : player2
+  def attacker
+    @players[0]
   end
 
+  def defender
+    @players[1]
+  end
+
+  def switch_turn
+    @players = @players.reverse
+  end
 end

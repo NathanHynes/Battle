@@ -18,6 +18,6 @@ feature 'attack player' do
     allow_any_instance_of(Player).to receive(:rand) { 10 }
     sign_in_and_play
     click_button('attack')
-    expect(page).to have_content 'Kirby: 90HP'
+    expect(page).to have_content "Kirby's remaining health is 90HP"
   end
 end

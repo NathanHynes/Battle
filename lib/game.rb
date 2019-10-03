@@ -3,8 +3,8 @@
 class Game
   attr_reader :player1, :player2, :current_turn
 
-  def self.create(player_1, player_2)
-    @game = Game.new(player_1, player_2)
+  def self.create(player1, player2)
+    @game = Game.new(player1, player2)
   end
 
   def self.instance
@@ -34,6 +34,6 @@ class Game
   end
 
   def end_game?
-    self.defender.hp <= 0
+    defender.hp <= 0
   end
 end

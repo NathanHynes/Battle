@@ -15,7 +15,7 @@ class Battle < Sinatra::Base
   end
 
   get '/test' do
-    "Testing infrastructure working!"
+    'Testing infrastructure working!'
   end
 
   post '/names' do
@@ -36,10 +36,10 @@ class Battle < Sinatra::Base
 
   post '/switch-turn' do
     if @game.end_game? == true
-      redirect ('/end-game')
+      redirect '/end-game'
     else
       @game.switch_turn
-      redirect ('/play')
+      redirect '/play'
     end
   end
 

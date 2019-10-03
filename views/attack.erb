@@ -10,7 +10,6 @@
     <p>
       <%="#{@game.defender.name}: #{@game.defender.hp}HP"%>
     </p>
-    
     <% if @game.end_game? == true %>
       <form action="/switch-turn" method="post">
         <input type="submit" value="Game Over">

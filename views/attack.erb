@@ -5,9 +5,18 @@
     <title>Attack</title>
   </head>
   <body>
-    <h1><%="#{@game.attacker.name} attacked #{@game.defender.name}"%></h1>
-    <form action="/switch-turn" method="post">
-     <button type="submit">play</button>
-  </form>
+    <h1><%="#{@game.attacker.name} attacked #{@game.defender.name}"%></h1><br>
+    <p>
+      <%="#{@game.defender.name}: #{@game.defender.hp}HP"%>
+    </p>
+    <% if @game.end_game? == true %>
+      <form action="/switch-turn" method="post">
+        <input type="submit" value="Game Over">
+      </form>
+    <% else %>
+      <form action="/switch-turn" method="post">
+        <button type="submit">play</button>
+      </form>
+    <% end %>
   </body>
 </html>

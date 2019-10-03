@@ -1,9 +1,15 @@
 # frozen_string_literal: true
 
-require_relative 'player'
-
 class Game
   attr_reader :player1, :player2
+
+  def self.create(player_1, player_2)
+    @game = Game.new(player_1, player_2)
+  end
+
+  def self.instance
+    @game
+  end
 
   def initialize(player1, player2)
     @players = [player1, player2]
@@ -25,5 +31,9 @@ class Game
 
   def switch_turn
     @players = @players.reverse
+  end
+
+  def end_game?
+    self.defender.hp <= 0
   end
 end

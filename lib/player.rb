@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+require_relative 'game'
+
 class Player
   attr_reader :name, :hp
 
@@ -8,6 +12,12 @@ class Player
   end
 
   def receive_damage
-    @hp -= 10
+    @hp -= damage
+  end
+
+  private
+
+  def damage
+    rand(0..15)
   end
 end

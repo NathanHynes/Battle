@@ -20,7 +20,7 @@ describe Player do
     end
   end
   describe '# receive damage' do
-    it 'reduces HP by 10' do
+    it 'reduces HP' do
       allow(player_1).to receive(:damage) { 10 }
       expect { player_1.receive_damage }.to change { player_1.hp }.by(-10)
     end

@@ -6,9 +6,11 @@
   </head>
   <body>
     <h1><%="#{@game.attacker.name} attacked #{@game.defender.name}"%></h1><br>
+    <h2><%="#{@game.defender.name} was damaged"%></h2>
     <p>
       <%="#{@game.defender.name}: #{@game.defender.hp}HP"%>
     </p>
+    
     <% if @game.end_game? == true %>
       <form action="/switch-turn" method="post">
         <input type="submit" value="Game Over">

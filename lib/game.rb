@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Game
-  attr_reader :player1, :player2
+  attr_reader :player1, :player2, :current_turn
 
   def self.create(player_1, player_2)
     @game = Game.new(player_1, player_2)
@@ -17,8 +17,8 @@ class Game
     @player2 = player2
   end
 
-  def attack(player)
-    player.receive_damage
+  def attack(opponent)
+    opponent.receive_damage
   end
 
   def attacker

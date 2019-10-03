@@ -39,7 +39,7 @@ describe Game do
   end
 
   describe '#defender' do
-    it 'returns defenders name after switching turns' do
+    it 'returns attackers name after switching turns' do
       game.switch_turn
       expect(game.defender).to eq(player_1)
     end

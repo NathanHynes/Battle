@@ -5,7 +5,7 @@ feature 'attack player' do
     expect(page).to have_content "Link attacked Kirby"
   end
 
-  scenario 'When attacked HP reduces by 10' do
+  scenario 'When attacked HP reduces' do
     allow_any_instance_of(Player).to receive(:rand) {10}
     sign_in_and_play
     click_button("attack")

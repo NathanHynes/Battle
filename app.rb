@@ -34,13 +34,14 @@ class Battle < Sinatra::Base
     erb :attack
   end
 
+  get '/heal' do
+    @game.attacker.heal
+    erb :heal
+  end
+
   post '/switch-turn' do
-    if @game.end_game? == true
-      redirect '/end-game'
-    else
-      @game.switch_turn
-      redirect '/play'
-    end
+    @game.switch_turn
+    redirect '/play'
   end
 
   get '/end-game' do

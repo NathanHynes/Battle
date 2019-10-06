@@ -30,4 +30,16 @@ describe Player do
       expect { player_1.receive_damage }.to change { player_1.hp }.by(-15)
     end
   end
+
+  describe '#heal' do
+    it 'increases HP' do
+      expect{ player_1.heal}.to change { player_1.hp }.by(10)
+    end
+
+    describe '#count_heal' do
+      it 'counts how many times you have healed' do
+        expect{ player_1.heal}.to change {player_1.count_heal}.by(1)
+      end
+    end
+  end
 end

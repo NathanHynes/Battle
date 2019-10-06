@@ -43,17 +43,27 @@
       #gameover {
         height: 82px;
         width: 180px;
+        background-color: red;
       }
     </style>
   </head>
   <body>
-    <h1><%="#{@game.attacker.name} attacked #{@game.defender.name}"%></h1><br>
-    <h2><%="#{@game.defender.name} was damaged"%></h2>
+    <% if @game.attacker.name == 'Link' %>
+      <h1><%="#{@game.attacker.name} attacked #{@game.defender.name}"%></h1><br>
+      <img src="images/link_attack_kirby.jpg" alt="kirby attacked">
+      <h2><%="#{@game.defender.name} was damaged"%></h2>
+      <img src="images/sad_kirby.png" alt="sad kirby">
+    <% else %>
+      <h1><%="#{@game.attacker.name} attacked #{@game.defender.name}"%></h1><br>
+      <img src="images/link_attacked.png" alt="link attacked">
+      <h2><%="#{@game.defender.name} was damaged"%></h2>
+      <img src="images/sad_link2.png" alt="sad link">
+    <% end %>
     <p>
       <%="#{@game.defender.name}'s remaining health is #{@game.defender.hp}HP"%>
     </p>
     <% if @game.end_game? == true %>
-      <form action="/switch-turn" method="post">
+      <form action="/end-game" method="get">
         <button id='gameover' type="submit">Game Over</button>
       </form>
     <% else %>

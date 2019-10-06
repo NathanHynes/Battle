@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <title>names</title>
+    <title>Arena</title>
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Ubuntu&display=swap" rel="stylesheet">
     <style>
       h1 {
@@ -19,6 +19,18 @@
 
       .attack {
         text-align: center
+      }
+
+      button {
+        height: 55px;
+        width: 96px;
+        font-size: 20px;
+        border-radius: 25px;
+        margin-top: 20px;
+      }
+
+      button:hover {
+        background-color: red;
       }
     </style>
   </head>
@@ -40,6 +52,19 @@
        <form class= "attack" action="/attack">
         <button  type="submit">attack</button>
      </form>
+     <% if @game.attacker.count_heal == 2 %>
+      <div style="display: none;">
+        <form action="/heal">
+          <input type="submit" value="Heal">
+        </form>
+      </div>
+     <% else %>
+      <div>
+        <form action="/heal">
+          <input type="submit" value="Heal">
+        </form>
+      </div>
+     <% end %>
        </p>
   </body>
 </html>

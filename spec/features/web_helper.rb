@@ -9,3 +9,8 @@ def attack_return
   click_button 'attack'
   click_button 'play'
 end
+
+def heal_return
+ click_button 'Heal'
+ click_button 'play'
+end

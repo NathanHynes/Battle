@@ -3,10 +3,50 @@
   <head>
     <meta charset="utf-8">
     <title>Game Over</title>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <style media="screen">
+
+      body {
+        font-family: 'Press Start 2P', cursive;
+      }
+
+      h1 {
+        text-align: center;
+        margin: auto;
+        font-size: 60px;
+        color: #8a0303;
+      }
+
+      header {
+        display: flex;
+        width: 50%;
+        height: 506px;
+        margin: auto;
+      }
+
+      section {
+        display: flex;
+        width: 50%;
+        height: 100px;
+        margin: auto;
+      }
+
+      h2 {
+        display: flex;
+        width: 50%;
+        height: 100px;
+        margin: auto;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <header>
-      Game Over
+      <h1>Game Over</h1>
     </header>
+    <section>
+      <h2><%="#{@game.defender.name} has been defeated"%></h2>
+    </section>
   </body>
 </html>

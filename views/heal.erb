@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1><%="#{@game.attacker.name} healed, HP is now #{@game.attacker.hp}HP"%></h1>
+
+    <% if @game.attacker.count_heal == 2 %>
+      <h2><%="#{@game.attacker.name} - That was your last health potion"%></h2>
+      <% end %>
+    <form action="/switch-turn" method="post">
+      <button type="submit">play</button>
+    </form>
+  </body>
+</html>
